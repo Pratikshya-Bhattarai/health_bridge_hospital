@@ -3,123 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health Bridge Hospital</title>
+  <title>HealthBridge Hospital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f8fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
+    :root {
+      --primary-green: #059669;
+      --secondary-teal: #14b8a6;
     }
-    header {
-      background-color: #0077b6;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    .glass { 
+      background: rgba(255, 255, 255, 0.15); 
+      backdrop-filter: blur(12px); 
+      -webkit-backdrop-filter: blur(12px); 
+      border: 1px solid rgba(255, 255, 255, 0.2); 
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
     }
-    main {
-      padding: 20px;
+    .glass:hover { 
+      background: rgba(255, 255, 255, 0.25); 
+      transform: translateY(-2px); 
     }
-    h1, h2 {
-      color: #0077b6;
+    .gradient-bg { 
+      background: linear-gradient(135deg, var(--primary-green), var(--secondary-teal)); 
     }
-    footer {
-      background-color: #0077b6;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
+    .hero-bg {
+      background: linear-gradient(135deg, var(--primary-green), var(--secondary-teal)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.1"><circle cx="100" cy="100" r="80" fill="white"/></svg>');
+      background-blend-mode: overlay;
     }
+    body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body>
-  <header>
-  <h1 style="color:white;">Health Bridge Hospital</h1>
-  <p>Bridging Care and Compassion</p>
-</header>
+<body class="text-gray-800 bg-gray-50" onload="AOS.init({ duration: 800 })">
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 glass">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        <h1 class="text-2xl font-bold text-white">HealthBridge Hospital</h1>
+      </div>
+      <div class="space-x-6">
+        <a href="#about" class="text-white hover:text-teal-200 transition">About</a>
+        <a href="#services" class="text-white hover:text-teal-200 transition">Services</a>
+        <a href="#specialties" class="text-white hover:text-teal-200 transition">Specialties</a>
+        <a href="#facilities" class="text-white hover:text-teal-200 transition">Facilities</a>
+        <a href="#contact" class="bg-emerald-500 text-white px-4 py-2 rounded-full hover:bg-emerald-600 transition">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-  <main>
-    <h2>About Us</h2>
-    <p>
-      HealthBridge Hospital is a leading private multi-specialty hospital in 
-      Nepal, dedicated to providing world-class healthcare with compassion and innovation.
-      Founded with the vision of bridging the gap between advanced medical science and accessible care, 
-      we bring together expert physicians, cutting-edge technology, and a patient-centered approach under one roof.
-    </p>
+  <!-- Hero Section -->
+  <section class="min-h-screen hero-bg text-white flex items-center justify-center">
+    <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+      <h2 class="text-5xl md:text-7xl font-bold mb-4">Bridging Care & Compassion</h2>
+      <p class="text-xl md:text-2xl mb-8">World-class healthcare with innovation and empathy in Nepal.</p>
+      <a href="#contact" class="bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-teal-100 transition transform hover:scale-105">Book Appointment</a>
+    </div>
+  </section>
 
-    <h2>Address: Kalanki, Kathmandu, Nepal  </h2>
-    <h2>Mobile: +977 980-1234567  </h2>
-    <h2>Email:  info@healthbridge.com.np </h2>
+  <!-- About Us -->
+  <section id="about" class="py-24">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">About HealthBridge</h2>
+      <div class="glass p-10 rounded-2xl max-w-3xl mx-auto">
+        <p class="text-lg text-center mb-6">
+          HealthBridge Hospital is Nepal’s premier multi-specialty hospital, delivering cutting-edge healthcare with compassion. Our expert physicians, advanced technology, and patient-first approach ensure exceptional care.
+        </p>
+        <div class="text-center space-y-2">
+          <p><strong>Address:</strong> Kalanki, Kathmandu, Nepal</p>
+          <p><strong>Mobile:</strong> +977 980-1234567</p>
+          <p><strong>Email:</strong> <a href="mailto:info@healthbridge.com.np" class="text-emerald-500 hover:underline">info@healthbridge.com.np</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Our Services</h2>
-    <ul>
-      <li>24/7 Emergency Care</li>
-      <li>Advanced Diagnostics and Imaging</li>
-      <li>Surgical and Critical Care Units</li>
-      <li>Maternity and Child Health Services</li>
-      <li>Specialized Outpatient Clinics</li>
-    </ul>
+  <!-- Services -->
+  <section id="services" class="py-24 bg-gray-100">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-2">24/7 Emergency Care</h3>
+          <p>Rapid, round-the-clock critical care.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-2">Advanced Diagnostics</h3>
+          <p>Cutting-edge imaging and lab services.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-semibold mb-2">Maternity & Child Health</h3>
+          <p>Comprehensive care for mothers and children.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="text-xl font-semibold mb-2">Surgical Units</h3>
+          <p>Modern surgical and critical care facilities.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
+          <h3 class="text-xl font-semibold mb-2">Outpatient Clinics</h3>
+          <p>Specialized consultations for all needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Our Mission</h2>
-    <p>
-      Mission: To deliver safe, affordable, and holistic healthcare solutions that improve the quality of life for all.
-    </p>
-     <h2>Our Vision</h2>
-    <p>
-      Vision: To be Nepal’s most trusted healthcare institution, recognized for excellence, innovation, and patient satisfaction.
-    </p>
+  <!-- Mission & Vision -->
+  <section class="py-24 bg-teal-50">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Mission & Vision</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-8 rounded-2xl border-l-4 border-emerald-500" data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-2">Mission</h3>
+          <p>Safe, affordable, holistic healthcare for all.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl border-l-4 border-emerald-500" data-aos="fade-left">
+          <h3 class="text-xl font-semibold mb-2">Vision</h3>
+          <p>Nepal’s most trusted hospital for excellence and innovation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Our Specialties </h2>
-     <ul>
-      <li>🫀 Cardiology & Cardiac Surgery – angioplasty, bypass & valve replacement.</li>
-      <li>🧠 Neurology & Neurosurgery – stroke care, epilepsy, spine, and brain surgeries.</li>
-      <li>🦴 Orthopedics & Trauma Care – joint replacement, sports medicine, rehabilitation.</li>
-      <li>👶 Mother & Child Care – maternity, pediatrics, neonatal intensive care (NICU).</li>
-      <li>🧬 Internal Medicine – diabetes, hypertension, infectious diseases.</li>
-       <li>🦷 Dental & Oral Health – preventive, cosmetic, and restorative dentistry.</li>
-       <li>🧘 Wellness & Preventive Medicine – annual health check-ups, lifestyle management.  </li>
-    </ul>
+  <!-- Specialties -->
+  <section id="specialties" class="py-24">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Our Specialties</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <span class="text-4xl mb-2 block">🫀</span>
+          <h3 class="text-xl font-semibold mb-2">Cardiology</h3>
+          <p>Angioplasty, bypass, valve replacement.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <span class="text-4xl mb-2 block">🧠</span>
+          <h3 class="text-xl font-semibold mb-2">Neurology</h3>
+          <p>Stroke care, epilepsy, brain surgeries.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+          <span class="text-4xl mb-2 block">🦴</span>
+          <h3 class="text-xl font-semibold mb-2">Orthopedics</h3>
+          <p>Joint replacement, sports medicine.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+          <span class="text-4xl mb-2 block">👶</span>
+          <h3 class="text-xl font-semibold mb-2">Mother & Child</h3>
+          <p>Maternity, pediatrics, NICU.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
+          <span class="text-4xl mb-2 block">🧬</span>
+          <h3 class="text-xl font-semibold mb-2">Internal Medicine</h3>
+          <p>Diabetes, hypertension, infections.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
+          <span class="text-4xl mb-2 block">🦷</span>
+          <h3 class="text-xl font-semibold mb-2">Dental Care</h3>
+          <p>Cosmetic and restorative dentistry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-     <h2>⚙️ Facilities & Technology </h2>
-     <ul>
-      <li>24/7 Emergency & Critical Care 🚨</li>
-      <li>State-of-the-art Operation Theatres 🛠️</li>
-      <li>Modern Diagnostic Labs & Imaging (MRI, CT, Ultrasound) 🔬</li>
-      <li>Intensive Care Units (ICU, CCU, NICU, PICU) 🛏️</li>
-      <li>In-house Pharmacy & Physiotherapy Centers 💊</li>
-      <li>Telemedicine & Online Consultation 📱</li>
-    </ul>
+  <!-- Facilities -->
+  <section id="facilities" class="py-24 bg-gray-100">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Facilities & Technology</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <span class="text-4xl mb-2 block">🚨</span>
+          <h3 class="text-xl font-semibold mb-2">Emergency Care</h3>
+          <p>24/7 urgent medical response.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <span class="text-4xl mb-2 block">🛠️</span>
+          <h3 class="text-xl font-semibold mb-2">Operation Theatres</h3>
+          <p>Advanced surgical facilities.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+          <span class="text-4xl mb-2 block">🔬</span>
+          <h3 class="text-xl font-semibold mb-2">Diagnostics</h3>
+          <p>MRI, CT, ultrasound services.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+          <span class="text-4xl mb-2 block">🛏️</span>
+          <h3 class="text-xl font-semibold mb-2">Intensive Care</h3>
+          <p>ICU, CCU, NICU, PICU.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
+          <span class="text-4xl mb-2 block">💊</span>
+          <h3 class="text-xl font-semibold mb-2">Pharmacy</h3>
+          <p>In-house medication and physiotherapy.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
+          <span class="text-4xl mb-2 block">📱</span>
+          <h3 class="text-xl font-semibold mb-2">Telemedicine</h3>
+          <p>Convenient online consultations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-     <h2>🌍 Why Choose HealthBridge? </h2>
-     <ul>
-      <li>Highly qualified doctors & nurses trained internationally 👨‍⚕️👩‍⚕️</li>
-      <li>Patient-first approach ensuring comfort & dignity 💙</li>
-      <li>Affordable care packages for all sections of society 📑</li>
-      <li>Commitment to innovation and continuous improvement 🚀</li>
-      <li>Community outreach programs to extend healthcare to rural Nepal 🏔️</li>
-    </ul>
+  <!-- Why Choose Us -->
+  <section class="py-24 bg-teal-50">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Why Choose HealthBridge?</h2>
+      <div class="glass p-10 rounded-2xl max-w-3xl mx-auto border-l-4 border-emerald-500">
+        <ul class="space-y-4">
+          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Internationally trained medical team</li>
+          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Patient-first care with dignity</li>
+          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Affordable healthcare packages</li>
+          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Innovative and improving services</li>
+          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Rural Nepal outreach programs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <h2>Doctors and nurses team for Emergeny Unit</h2>
-<img src="images/Doctor and nurses team.jpg" alt="Team of Doctors and nurses for Emergeny Unit " width="400">
+  <!-- Team & Patient Care -->
+  <section class="py-24">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Our Team & Care</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-8 rounded-2xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 bg-gray-300 rounded-xl mb-4 flex items-center justify-center opacity-50">Team Image Placeholder</div>
+          <h3 class="text-xl font-semibold mb-2">Emergency Team</h3>
+          <p>Skilled doctors and nurses, 24/7 ready.</p>
+        </div>
+        <div class="glass p-8 rounded-2xl text-center hover:scale-105 transition-transform" data-aos="fadeUp" data-aos-delay="200">
+          <div class="h-48 bg-gray-300 rounded-xl mb-4 flex items-center justify-center opacity-50">Patient Room Placeholder</div>
+          <h3 class="text-xl font-semibold mb-2">Patient Care</h3>
+          <p>Comfortable rooms, compassionate consultations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Our Team</h2>
-<img src="images/medical team.jpg" alt="Medical Staff" width="400">
-
-<h2>Room for Patient</h2>
-<img src="images/room.jpg" alt="Hospital Room for Patient" width="400">
-
-    <h2>Consultant with Patient</h2>
-<img src="images/consultant with patient.jpg" alt="Consultant with Patient" width="400">
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Health Bridge Hospital. All rights reserved.</p>
+  <!-- Footer -->
+  <footer id="contact" class="gradient-bg text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <div class="glass p-6 rounded-2xl inline-block">
+        <p class="mb-4">© 2025 HealthBridge Hospital. All rights reserved.</p>
+        <p><strong>Contact:</strong> +977 980-1234567 | <a href="mailto:info@healthbridge.com.np" class="underline hover:text-teal-200">info@healthbridge.com.np</a></p>
+        <p>Kalanki, Kathmandu, Nepal</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
-
-
-
-
-
