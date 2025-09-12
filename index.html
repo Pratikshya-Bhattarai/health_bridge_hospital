@@ -11,30 +11,27 @@
   <style>
     :root {
       --primary-green: #059669;
-      --secondary-teal: #14b8a6;
+      --secondary-blue: #3b82f6;
+      --neutral-gray: #f9fafb;
     }
     .glass { 
-      background: rgba(255, 255, 255, 0.15); 
-      backdrop-filter: blur(12px); 
-      -webkit-backdrop-filter: blur(12px); 
-      border: 1px solid rgba(255, 255, 255, 0.2); 
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+      background: rgba(255, 255, 255, 0.2); 
+      backdrop-filter: blur(10px); 
+      -webkit-backdrop-filter: blur(10px); 
+      border: 1px solid rgba(255, 255, 255, 0.3); 
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
     }
     .glass:hover { 
-      background: rgba(255, 255, 255, 0.25); 
+      background: rgba(255, 255, 255, 0.3); 
       transform: translateY(-2px); 
     }
     .gradient-bg { 
-      background: linear-gradient(135deg, var(--primary-green), var(--secondary-teal)); 
-    }
-    .hero-bg {
-      background: linear-gradient(135deg, var(--primary-green), var(--secondary-teal)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.1"><circle cx="100" cy="100" r="80" fill="white"/></svg>');
-      background-blend-mode: overlay;
+      background: linear-gradient(135deg, var(--primary-green), var(--secondary-blue)); 
     }
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="text-gray-800 bg-gray-50" onload="AOS.init({ duration: 800 })">
+<body class="text-gray-800 bg-gray-50" onload="AOS.init({ duration: 600 })">
   <!-- Header -->
   <header class="fixed top-0 w-full z-50 glass">
     <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -45,63 +42,64 @@
         <h1 class="text-2xl font-bold text-white">HealthBridge Hospital</h1>
       </div>
       <div class="space-x-6">
-        <a href="#about" class="text-white hover:text-teal-200 transition">About</a>
-        <a href="#services" class="text-white hover:text-teal-200 transition">Services</a>
-        <a href="#specialties" class="text-white hover:text-teal-200 transition">Specialties</a>
-        <a href="#facilities" class="text-white hover:text-teal-200 transition">Facilities</a>
-        <a href="#contact" class="bg-emerald-500 text-white px-4 py-2 rounded-full hover:bg-emerald-600 transition">Contact</a>
+        <a href="#about" class="text-white hover:text-blue-200">About</a>
+        <a href="#services" class="text-white hover:text-blue-200">Services</a>
+        <a href="#doctors" class="text-white hover:text-blue-200">Doctors</a>
+        <a href="#specialties" class="text-white hover:text-blue-200">Specialties</a>
+        <a href="#facilities" class="text-white hover:text-blue-200">Facilities</a>
+        <a href="#contact" class="bg-emerald-600 text-white px-4 py-2 rounded-full hover:bg-emerald-700">Contact</a>
       </div>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen hero-bg text-white flex items-center justify-center">
+  <section class="min-h-screen gradient-bg text-white flex items-center justify-center">
     <div class="container mx-auto px-4 text-center" data-aos="fade-up">
-      <h2 class="text-5xl md:text-7xl font-bold mb-4">Bridging Care & Compassion</h2>
-      <p class="text-xl md:text-2xl mb-8">World-class healthcare with innovation and empathy in Nepal.</p>
-      <a href="#contact" class="bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-teal-100 transition transform hover:scale-105">Book Appointment</a>
+      <h2 class="text-5xl md:text-6xl font-bold mb-4">Bridging Care & Compassion</h2>
+      <p class="text-lg md:text-xl mb-6">Premier healthcare services in Nepal with expertise and empathy.</p>
+      <a href="#contact" class="bg-white text-emerald-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100">Book Appointment</a>
     </div>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-24">
+  <section id="about" class="py-20">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">About HealthBridge</h2>
-      <div class="glass p-10 rounded-2xl max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">About HealthBridge</h2>
+      <div class="glass p-8 rounded-xl max-w-3xl mx-auto">
         <p class="text-lg text-center mb-6">
-          HealthBridge Hospital is Nepal’s premier multi-specialty hospital, delivering cutting-edge healthcare with compassion. Our expert physicians, advanced technology, and patient-first approach ensure exceptional care.
+          HealthBridge Hospital is a leading multi-specialty hospital in Nepal, committed to delivering advanced healthcare with compassion. Our expert team, state-of-the-art technology, and patient-centered care set us apart.
         </p>
         <div class="text-center space-y-2">
           <p><strong>Address:</strong> Kalanki, Kathmandu, Nepal</p>
           <p><strong>Mobile:</strong> +977 980-1234567</p>
-          <p><strong>Email:</strong> <a href="mailto:info@healthbridge.com.np" class="text-emerald-500 hover:underline">info@healthbridge.com.np</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@healthbridge.com.np" class="text-emerald-600 hover:underline">info@healthbridge.com.np</a></p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-24 bg-gray-100">
+  <section id="services" class="py-20 bg-gray-100">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Our Services</h2>
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
           <h3 class="text-xl font-semibold mb-2">24/7 Emergency Care</h3>
-          <p>Rapid, round-the-clock critical care.</p>
+          <p>Immediate, round-the-clock critical care.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
           <h3 class="text-xl font-semibold mb-2">Advanced Diagnostics</h3>
-          <p>Cutting-edge imaging and lab services.</p>
+          <p>State-of-the-art imaging and lab services.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
           <h3 class="text-xl font-semibold mb-2">Maternity & Child Health</h3>
           <p>Comprehensive care for mothers and children.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
           <h3 class="text-xl font-semibold mb-2">Surgical Units</h3>
-          <p>Modern surgical and critical care facilities.</p>
+          <p>Advanced surgical and critical care facilities.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
           <h3 class="text-xl font-semibold mb-2">Outpatient Clinics</h3>
           <p>Specialized consultations for all needs.</p>
         </div>
@@ -109,55 +107,84 @@
     </div>
   </section>
 
-  <!-- Mission & Vision -->
-  <section class="py-24 bg-teal-50">
+  <!-- Doctors -->
+  <section id="doctors" class="py-20">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Mission & Vision</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass p-8 rounded-2xl border-l-4 border-emerald-500" data-aos="fade-right">
-          <h3 class="text-xl font-semibold mb-2">Mission</h3>
-          <p>Safe, affordable, holistic healthcare for all.</p>
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Our Doctors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="glass p-6 rounded-xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-xl font-semibold mb-2">Dr. Suman Shrestha</h3>
+          <p class="text-gray-600">MBBS, MD (Cardiology)</p>
+          <p>Specialist in angioplasty and bypass surgery.</p>
         </div>
-        <div class="glass p-8 rounded-2xl border-l-4 border-emerald-500" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-xl font-semibold mb-2">Dr. Anjali Thapa</h3>
+          <p class="text-gray-600">MBBS, MS (Neurosurgery)</p>
+          <p>Expert in stroke care and brain surgeries.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-xl font-semibold mb-2">Dr. Rajesh Gurung</h3>
+          <p class="text-gray-600">MBBS, MD (Orthopedics)</p>
+          <p>Specialist in joint replacement and trauma care.</p>
+        </div>
+        <div class="glass p-6 rounded-xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="text-xl font-semibold mb-2">Dr. Priya Lama</h3>
+          <p class="text-gray-600">MBBS, MD (Pediatrics)</p>
+          <p>Expert in neonatal and child health care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-blue-50">
+    <div class="container mx-auto px-4" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Mission & Vision</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-xl" data-aos="fade-right">
+          <h3 class="text-xl font-semibold mb-2">Mission</h3>
+          <p>Deliver safe, affordable, and holistic healthcare to enhance quality of life.</p>
+        </div>
+        <div class="glass p-6 rounded-xl" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">Vision</h3>
-          <p>Nepal’s most trusted hospital for excellence and innovation.</p>
+          <p>Be Nepal’s most trusted hospital for excellence and patient satisfaction.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Specialties -->
-  <section id="specialties" class="py-24">
+  <section id="specialties" class="py-20">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Our Specialties</h2>
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Our Specialties</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
-          <span class="text-4xl mb-2 block">🫀</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <span class="text-3xl block mb-2">🫀</span>
           <h3 class="text-xl font-semibold mb-2">Cardiology</h3>
           <p>Angioplasty, bypass, valve replacement.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
-          <span class="text-4xl mb-2 block">🧠</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <span class="text-3xl block mb-2">🧠</span>
           <h3 class="text-xl font-semibold mb-2">Neurology</h3>
           <p>Stroke care, epilepsy, brain surgeries.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
-          <span class="text-4xl mb-2 block">🦴</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+          <span class="text-3xl block mb-2">🦴</span>
           <h3 class="text-xl font-semibold mb-2">Orthopedics</h3>
           <p>Joint replacement, sports medicine.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
-          <span class="text-4xl mb-2 block">👶</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+          <span class="text-3xl block mb-2">👶</span>
           <h3 class="text-xl font-semibold mb-2">Mother & Child</h3>
           <p>Maternity, pediatrics, NICU.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
-          <span class="text-4xl mb-2 block">🧬</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
+          <span class="text-3xl block mb-2">🧬</span>
           <h3 class="text-xl font-semibold mb-2">Internal Medicine</h3>
           <p>Diabetes, hypertension, infections.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
-          <span class="text-4xl mb-2 block">🦷</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
+          <span class="text-3xl block mb-2">🦷</span>
           <h3 class="text-xl font-semibold mb-2">Dental Care</h3>
           <p>Cosmetic and restorative dentistry.</p>
         </div>
@@ -166,37 +193,37 @@
   </section>
 
   <!-- Facilities -->
-  <section id="facilities" class="py-24 bg-gray-100">
+  <section id="facilities" class="py-20 bg-gray-100">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Facilities & Technology</h2>
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Facilities & Technology</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
-          <span class="text-4xl mb-2 block">🚨</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <span class="text-3xl block mb-2">🚨</span>
           <h3 class="text-xl font-semibold mb-2">Emergency Care</h3>
           <p>24/7 urgent medical response.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
-          <span class="text-4xl mb-2 block">🛠️</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <span class="text-3xl block mb-2">🛠️</span>
           <h3 class="text-xl font-semibold mb-2">Operation Theatres</h3>
           <p>Advanced surgical facilities.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
-          <span class="text-4xl mb-2 block">🔬</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
+          <span class="text-3xl block mb-2">🔬</span>
           <h3 class="text-xl font-semibold mb-2">Diagnostics</h3>
           <p>MRI, CT, ultrasound services.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
-          <span class="text-4xl mb-2 block">🛏️</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="400">
+          <span class="text-3xl block mb-2">🛏️</span>
           <h3 class="text-xl font-semibold mb-2">Intensive Care</h3>
           <p>ICU, CCU, NICU, PICU.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
-          <span class="text-4xl mb-2 block">💊</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="500">
+          <span class="text-3xl block mb-2">💊</span>
           <h3 class="text-xl font-semibold mb-2">Pharmacy</h3>
           <p>In-house medication and physiotherapy.</p>
         </div>
-        <div class="glass p-8 rounded-2xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
-          <span class="text-4xl mb-2 block">📱</span>
+        <div class="glass p-6 rounded-xl hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="600">
+          <span class="text-3xl block mb-2">📱</span>
           <h3 class="text-xl font-semibold mb-2">Telemedicine</h3>
           <p>Convenient online consultations.</p>
         </div>
@@ -205,46 +232,46 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section class="py-24 bg-teal-50">
+  <section class="py-20 bg-blue-50">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Why Choose HealthBridge?</h2>
-      <div class="glass p-10 rounded-2xl max-w-3xl mx-auto border-l-4 border-emerald-500">
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Why Choose HealthBridge?</h2>
+      <div class="glass p-8 rounded-xl max-w-3xl mx-auto">
         <ul class="space-y-4">
-          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Internationally trained medical team</li>
-          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Patient-first care with dignity</li>
-          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Affordable healthcare packages</li>
-          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Innovative and improving services</li>
-          <li class="flex items-center"><span class="text-emerald-500 mr-2 text-2xl">✔</span> Rural Nepal outreach programs</li>
+          <li class="flex items-center"><span class="text-emerald-600 mr-2 text-xl">✔</span> Internationally trained medical team</li>
+          <li class="flex items-center"><span class="text-emerald-600 mr-2 text-xl">✔</span> Patient-first care with dignity</li>
+          <li class="flex items-center"><span class="text-emerald-600 mr-2 text-xl">✔</span> Affordable healthcare packages</li>
+          <li class="flex items-center"><span class="text-emerald-600 mr-2 text-xl">✔</span> Innovative and improving services</li>
+          <li class="flex items-center"><span class="text-emerald-600 mr-2 text-xl">✔</span> Rural Nepal outreach programs</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Team & Patient Care -->
-  <section class="py-24">
+  <section class="py-20">
     <div class="container mx-auto px-4" data-aos="fade-up">
-      <h2 class="text-5xl font-bold text-center mb-10 text-emerald-600">Our Team & Care</h2>
+      <h2 class="text-4xl font-bold text-center mb-8 text-emerald-600">Our Team & Care</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass p-8 rounded-2xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
-          <div class="h-48 bg-gray-300 rounded-xl mb-4 flex items-center justify-center opacity-50">Team Image Placeholder</div>
+        <div class="glass p-6 rounded-xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 bg-gray-200 rounded-xl mb-4 flex items-center justify-center opacity-50">Team Image Placeholder</div>
           <h3 class="text-xl font-semibold mb-2">Emergency Team</h3>
-          <p>Skilled doctors and nurses, 24/7 ready.</p>
+          <p>Highly skilled doctors and nurses, available 24/7.</p>
         </div>
-        <div class="glass p-8 rounded-2xl text-center hover:scale-105 transition-transform" data-aos="fadeUp" data-aos-delay="200">
-          <div class="h-48 bg-gray-300 rounded-xl mb-4 flex items-center justify-center opacity-50">Patient Room Placeholder</div>
+        <div class="glass p-6 rounded-xl text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-48 bg-gray-200 rounded-xl mb-4 flex items-center justify-center opacity-50">Patient Room Placeholder</div>
           <h3 class="text-xl font-semibold mb-2">Patient Care</h3>
-          <p>Comfortable rooms, compassionate consultations.</p>
+          <p>Comfortable rooms and compassionate consultations.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer id="contact" class="gradient-bg text-white py-12">
+  <footer id="contact" class="gradient-bg text-white py-10">
     <div class="container mx-auto px-4 text-center">
-      <div class="glass p-6 rounded-2xl inline-block">
+      <div class="glass p-6 rounded-xl inline-block">
         <p class="mb-4">© 2025 HealthBridge Hospital. All rights reserved.</p>
-        <p><strong>Contact:</strong> +977 980-1234567 | <a href="mailto:info@healthbridge.com.np" class="underline hover:text-teal-200">info@healthbridge.com.np</a></p>
+        <p><strong>Contact:</strong> +977 980-1234567 | <a href="mailto:info@healthbridge.com.np" class="underline hover:text-blue-200">info@healthbridge.com.np</a></p>
         <p>Kalanki, Kathmandu, Nepal</p>
       </div>
     </div>
