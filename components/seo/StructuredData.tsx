@@ -1,4 +1,52 @@
-import { MedicalOrganization, LocalBusiness } from 'schema-dts'
+interface MedicalOrganization {
+  '@type': 'MedicalOrganization'
+  name: string
+  description: string
+  url: string
+  logo: string
+  address: {
+    '@type': 'PostalAddress'
+    streetAddress: string
+    addressLocality: string
+    addressCountry: string
+  }
+  contactPoint: {
+    '@type': 'ContactPoint'
+    telephone: string
+    contactType: string
+    availableLanguage: string[]
+  }
+  medicalSpecialty: string[]
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog'
+    name: string
+    itemListElement: Array<{
+      '@type': 'Offer'
+      itemOffered: {
+        '@type': 'MedicalProcedure'
+        name: string
+      }
+    }>
+  }
+}
+
+interface LocalBusiness {
+  '@type': 'LocalBusiness'
+  '@id': string
+  name: string
+  description: string
+  url: string
+  telephone: string
+  address: {
+    '@type': 'PostalAddress'
+    streetAddress: string
+    addressLocality: string
+    addressCountry: string
+  }
+  openingHours: string
+  priceRange: string
+  image: string
+}
 
 interface StructuredDataProps {
   type: 'organization' | 'localBusiness'
