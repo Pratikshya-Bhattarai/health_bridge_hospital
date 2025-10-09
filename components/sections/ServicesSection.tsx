@@ -12,7 +12,7 @@ import {
   Brain,
   Bone,
   Pill,
-  Tooth
+  Smile
 } from 'lucide-react'
 
 const ServicesSection = () => {
@@ -61,7 +61,7 @@ const ServicesSection = () => {
     { icon: Bone, name: 'Orthopedics', description: 'Bones & joints' },
     { icon: Baby, name: 'Pediatrics', description: 'Child healthcare' },
     { icon: Pill, name: 'Internal Medicine', description: 'General health' },
-    { icon: Tooth, name: 'Dental Care', description: 'Oral health' }
+    { icon: Smile, name: 'Dental Care', description: 'Oral health' }
   ]
 
   return (
