@@ -11,8 +11,8 @@ DEBUG = False
 
 # Allowed hosts for production
 ALLOWED_HOSTS = [
-    'yourusername.pythonanywhere.com',
-    'www.yourusername.pythonanywhere.com',
+    'bepratikshya.pythonanywhere.com',
+    'www.bepratikshya.pythonanywhere.com',
     'localhost',  # For local testing
     '127.0.0.1',
 ]
@@ -50,8 +50,8 @@ SECURE_HSTS_PRELOAD = True
 
 # CORS settings for frontend
 CORS_ALLOWED_ORIGINS = [
-    "https://your-frontend-domain.vercel.app",
     "https://healthbridge-hospital.vercel.app",
+    "https://health-bridge-hospital.vercel.app",
     "http://localhost:3001",
     "http://localhost:3000",
     "http://127.0.0.1:3001",

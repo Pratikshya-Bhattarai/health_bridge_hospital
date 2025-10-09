@@ -44,3 +44,29 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# Python/Django
+*.pyc
+*~
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Environment variables
+.env
+.env.local
+.env.production
