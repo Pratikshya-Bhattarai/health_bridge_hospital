@@ -1,0 +1,29 @@
+# HealthBridge Backend - Production Requirements
+# For PythonAnywhere deployment
+
+# Core Django
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+
+# Database
+psycopg2-binary==2.9.7
+
+# Environment variables
+python-dotenv==1.0.0
+
+# API Documentation
+drf-yasg==1.21.7
+
+# Security
+django-environ==0.11.2
+
+# Production server
+gunicorn==21.2.0
+
+# Monitoring and logging
+whitenoise==6.6.0
+
+# Additional utilities
+Pillow==10.0.1
+requests==2.31.0
