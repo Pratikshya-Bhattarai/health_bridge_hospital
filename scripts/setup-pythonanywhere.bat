@@ -5,7 +5,7 @@ REM This script sets up the initial deployment environment on PythonAnywhere
 echo 🏥 Setting up HealthBridge Hospital on PythonAnywhere...
 
 REM Configuration
-set PYTHONANYWHERE_USERNAME=bepratikshya
+set PYTHONANYWHERE_USERNAME=pratikshyabhattarai
 set PYTHONANYWHERE_HOST=pythonanywhere.com
 set PROJECT_NAME=health_bridge_hospital
 set GITHUB_REPO=https://github.com/yourusername/health_bridge_hospital.git
@@ -60,7 +60,7 @@ echo [SUCCESS] SSH connection successful
 REM Setup project on PythonAnywhere
 echo [INFO] Setting up project on PythonAnywhere...
 
-ssh %PYTHONANYWHERE_USERNAME%@%PYTHONANYWHERE_HOST% "mkdir -p /home/bepratikshya/health_bridge_hospital && cd /home/bepratikshya/health_bridge_hospital && if not exist .git (git clone %GITHUB_REPO% .) else (git pull origin main) && cd backend && python3.10 -m venv venv && source venv/bin/activate && pip install --user -r requirements.txt && mkdir -p logs && cp env.example .env"
+ssh %PYTHONANYWHERE_USERNAME%@%PYTHONANYWHERE_HOST% "mkdir -p /home/pratikshyabhattarai/health_bridge_hospital && cd /home/pratikshyabhattarai/health_bridge_hospital && if not exist .git (git clone %GITHUB_REPO% .) else (git pull origin main) && cd backend && python3.10 -m venv venv && source venv/bin/activate && pip install --user -r requirements.txt && mkdir -p logs && cp env.example .env"
 
 if errorlevel 1 (
     echo [ERROR] Setup failed. Please check the error messages above.
@@ -70,8 +70,8 @@ if errorlevel 1 (
 
 echo [SUCCESS] Initial setup completed successfully!
 echo [INFO] Next steps:
-echo 1. SSH into PythonAnywhere: ssh bepratikshya@pythonanywhere.com
-echo 2. Navigate to project: cd /home/bepratikshya/health_bridge_hospital/backend
+echo 1. SSH into PythonAnywhere: ssh pratikshyabhattarai@pythonanywhere.com
+echo 2. Navigate to project: cd /home/pratikshyabhattarai/health_bridge_hospital/backend
 echo 3. Update .env file with your credentials
 echo 4. Run: python manage.py migrate --settings=healthbridge_backend.settings_production
 echo 5. Run: python manage.py createsuperuser --settings=healthbridge_backend.settings_production

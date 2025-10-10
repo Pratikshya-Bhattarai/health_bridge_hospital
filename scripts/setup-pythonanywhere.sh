@@ -8,7 +8,7 @@ set -e  # Exit on any error
 echo "🏥 Setting up HealthBridge Hospital on PythonAnywhere..."
 
 # Configuration
-PYTHONANYWHERE_USERNAME="bepratikshya"
+PYTHONANYWHERE_USERNAME="pratikshyabhattarai"
 PYTHONANYWHERE_HOST="pythonanywhere.com"
 PROJECT_NAME="health_bridge_hospital"
 GITHUB_REPO="https://github.com/yourusername/health_bridge_hospital.git"
@@ -83,8 +83,8 @@ ssh ${PYTHONANYWHERE_USERNAME}@${PYTHONANYWHERE_HOST} << EOF
     
     # Create project directory
     echo "📁 Creating project directory..."
-    mkdir -p /home/bepratikshya/health_bridge_hospital
-    cd /home/bepratikshya/health_bridge_hospital
+    mkdir -p /home/pratikshyabhattarai/health_bridge_hospital
+    cd /home/pratikshyabhattarai/health_bridge_hospital
     
     # Clone repository (you'll need to update this with your actual GitHub repo)
     echo "📥 Cloning repository..."
@@ -126,8 +126,8 @@ EOF
 if [ $? -eq 0 ]; then
     print_success "Initial setup completed successfully!"
     print_status "Next steps:"
-    echo "1. SSH into PythonAnywhere: ssh bepratikshya@pythonanywhere.com"
-    echo "2. Navigate to project: cd /home/bepratikshya/health_bridge_hospital/backend"
+    echo "1. SSH into PythonAnywhere: ssh pratikshyabhattarai@pythonanywhere.com"
+    echo "2. Navigate to project: cd /home/pratikshyabhattarai/health_bridge_hospital/backend"
     echo "3. Update .env file with your credentials"
     echo "4. Run: python manage.py migrate --settings=healthbridge_backend.settings_production"
     echo "5. Run: python manage.py createsuperuser --settings=healthbridge_backend.settings_production"

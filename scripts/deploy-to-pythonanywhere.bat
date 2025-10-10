@@ -5,7 +5,7 @@ REM This script automates the deployment process to PythonAnywhere
 echo 🚀 Starting HealthBridge Hospital Deployment to PythonAnywhere...
 
 REM Configuration
-set PYTHONANYWHERE_USERNAME=bepratikshya
+set PYTHONANYWHERE_USERNAME=pratikshyabhattarai
 set PYTHONANYWHERE_HOST=pythonanywhere.com
 set PROJECT_NAME=health_bridge_hospital
 set BACKEND_DIR=backend
@@ -50,7 +50,7 @@ echo [SUCCESS] SSH connection successful
 REM Deploy to PythonAnywhere
 echo [INFO] Deploying to PythonAnywhere...
 
-ssh %PYTHONANYWHERE_USERNAME%@%PYTHONANYWHERE_HOST% "cd /home/bepratikshya/health_bridge_hospital && git pull origin main && cd backend && source venv/bin/activate && pip install --user -r requirements.txt && python manage.py migrate --settings=healthbridge_backend.settings_production && python manage.py collectstatic --noinput --settings=healthbridge_backend.settings_production && touch /var/www/bepratikshya_pythonanywhere_com_wsgi.py"
+ssh %PYTHONANYWHERE_USERNAME%@%PYTHONANYWHERE_HOST% "cd /home/pratikshyabhattarai/health_bridge_hospital && git pull origin main && cd backend && source venv/bin/activate && pip install --user -r requirements.txt && python manage.py migrate --settings=healthbridge_backend.settings_production && python manage.py collectstatic --noinput --settings=healthbridge_backend.settings_production && touch /var/www/pratikshyabhattarai_pythonanywhere_com_wsgi.py"
 
 if errorlevel 1 (
     echo [ERROR] Deployment failed. Please check the error messages above.
@@ -59,8 +59,8 @@ if errorlevel 1 (
 )
 
 echo [SUCCESS] Deployment completed successfully!
-echo [INFO] Your application is now live at: https://bepratikshya.pythonanywhere.com
-echo [INFO] API endpoint: https://bepratikshya.pythonanywhere.com/api/
-echo [INFO] Admin panel: https://bepratikshya.pythonanywhere.com/admin/
+echo [INFO] Your application is now live at: https://pratikshyabhattarai.pythonanywhere.com
+echo [INFO] API endpoint: https://pratikshyabhattarai.pythonanywhere.com/api/
+echo [INFO] Admin panel: https://pratikshyabhattarai.pythonanywhere.com/admin/
 
 pause

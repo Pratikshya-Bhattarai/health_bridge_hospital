@@ -36,11 +36,11 @@ jobs:
         username: ${{ secrets.PYTHONANYWHERE_USERNAME }}
         key: ${{ secrets.PYTHONANYWHERE_SSH_KEY }}
         script: |
-          cd /home/bepratikshya/health_bridge_hospital
+          cd /home/pratikshyabhattarai/health_bridge_hospital
           git pull origin main
           cd backend
           source venv/bin/activate
           pip install --user -r requirements.txt
           python manage.py migrate --settings=healthbridge_backend.settings_production
           python manage.py collectstatic --noinput --settings=healthbridge_backend.settings_production
-          touch /var/www/bepratikshya_pythonanywhere_com_wsgi.py
+          touch /var/www/pratikshyabhattarai_pythonanywhere_com_wsgi.py

@@ -11,8 +11,8 @@ DEBUG = False
 
 # Allowed hosts for production
 ALLOWED_HOSTS = [
-    'bepratikshya.pythonanywhere.com',
-    'www.bepratikshya.pythonanywhere.com',
+    'pratikshyabhattarai.pythonanywhere.com',
+    'www.pratikshyabhattarai.pythonanywhere.com',
     'localhost',  # For local testing
     '127.0.0.1',
 ]

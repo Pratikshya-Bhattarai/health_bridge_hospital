@@ -8,7 +8,7 @@ set -e  # Exit on any error
 echo "🚀 Starting HealthBridge Hospital Deployment to PythonAnywhere..."
 
 # Configuration
-PYTHONANYWHERE_USERNAME="bepratikshya"
+PYTHONANYWHERE_USERNAME="pratikshyabhattarai"
 PYTHONANYWHERE_HOST="pythonanywhere.com"
 PROJECT_NAME="health_bridge_hospital"
 BACKEND_DIR="backend"
@@ -71,7 +71,7 @@ ssh ${PYTHONANYWHERE_USERNAME}@${PYTHONANYWHERE_HOST} << 'EOF'
     set -e
     
     # Navigate to project directory
-    cd /home/bepratikshya/health_bridge_hospital
+    cd /home/pratikshyabhattarai/health_bridge_hospital
     
     # Pull latest changes
     echo "📥 Pulling latest changes from GitHub..."
@@ -108,9 +108,9 @@ EOF
 
 if [ $? -eq 0 ]; then
     print_success "Deployment completed successfully!"
-    print_status "Your application is now live at: https://bepratikshya.pythonanywhere.com"
-    print_status "API endpoint: https://bepratikshya.pythonanywhere.com/api/"
-    print_status "Admin panel: https://bepratikshya.pythonanywhere.com/admin/"
+    print_status "Your application is now live at: https://pratikshyabhattarai.pythonanywhere.com"
+    print_status "API endpoint: https://pratikshyabhattarai.pythonanywhere.com/api/"
+    print_status "Admin panel: https://pratikshyabhattarai.pythonanywhere.com/admin/"
 else
     print_error "Deployment failed. Please check the error messages above."
     exit 1
