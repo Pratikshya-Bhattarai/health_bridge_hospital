@@ -1,21 +1,21 @@
 """
-WSGI configuration for PythonAnywhere deployment
-Copy this content to your WSGI file in PythonAnywhere
+WSGI configuration for HealthBridge Hospital on PythonAnywhere.
+This file should be placed at: /var/www/pratikshyabhattarai_pythonanywhere_com_wsgi.py
 """
 
 import os
 import sys
 
-# Add your project directory to the Python path
-path = '/home/yourusername/health_bridge_hospital/backend'
+# Add the project directory to Python path
+path = '/home/pratikshyabhattarai/health_bridge_hospital/backend'
 if path not in sys.path:
     sys.path.append(path)
 
-# Set the Django settings module
+# Set Django settings module
 os.environ['DJANGO_SETTINGS_MODULE'] = 'healthbridge_backend.settings_production'
 
 # Activate virtual environment
-activate_this = '/home/yourusername/health_bridge_hospital/backend/venv/bin/activate_this.py'
+activate_this = '/home/pratikshyabhattarai/health_bridge_hospital/backend/venv/bin/activate_this.py'
 if os.path.exists(activate_this):
     exec(open(activate_this).read(), dict(__file__=activate_this))
 

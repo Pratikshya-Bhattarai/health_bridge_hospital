@@ -27,7 +27,7 @@ class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications')
     title = models.CharField(max_length=200)
     message = models.TextField()
-    notification_type = models.CharField(max_length=20, choices=NOTIFICATION_TYPE_CHOICES)
+    notification_type = models.CharField(max_length=25, choices=NOTIFICATION_TYPE_CHOICES)
     priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='medium')
     
     # Status
@@ -81,7 +81,7 @@ class EmailTemplate(models.Model):
     ]
     
     name = models.CharField(max_length=100, unique=True)
-    template_type = models.CharField(max_length=20, choices=TEMPLATE_TYPE_CHOICES)
+    template_type = models.CharField(max_length=25, choices=TEMPLATE_TYPE_CHOICES)
     subject = models.CharField(max_length=200)
     html_content = models.TextField()
     text_content = models.TextField(blank=True)

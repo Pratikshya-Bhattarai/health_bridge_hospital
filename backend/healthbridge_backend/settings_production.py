@@ -4,7 +4,11 @@ Optimized for PythonAnywhere deployment
 """
 
 import os
+from dotenv import load_dotenv
 from .settings import *
+
+# Load environment variables from .env file
+load_dotenv()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
