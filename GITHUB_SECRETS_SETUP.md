@@ -1,49 +1,84 @@
 # 🔐 GitHub Secrets Setup Guide
 
-## Required Secrets for Deployment
+## 🚨 Fix GitHub Actions Failures
 
-Add these secrets to your GitHub repository at:
-**Settings → Secrets and variables → Actions → New repository secret**
+Your GitHub Actions are failing because the required secrets are not configured. Here's how to fix them:
 
-### 1. PythonAnywhere Secrets
-```
-PYTHONANYWHERE_API_TOKEN = [Your PythonAnywhere API Token]
-PYTHONANYWHERE_USERNAME = [Your PythonAnywhere Username]
-```
+### For PythonAnywhere Deployment (Backend)
 
-### 2. Database Secrets (Supabase)
-```
-DB_NAME = postgres
-DB_USER = postgres
-DB_PASSWORD = [Your Supabase Database Password]
-DB_HOST = [Your Supabase Database Host - looks like db.xxxxxxxxxxxxx.supabase.co]
-DB_PORT = 5432
-```
+You need to set up these secrets in your GitHub repository:
 
-### 3. Django Secret Key
-```
-SECRET_KEY = djangosecretkey2024!@#$%^&*(-_=+)abcdefghijklmnopqrstuvwxyz0123456789
-```
+1. **Go to your GitHub repository**
+2. **Click on "Settings" tab**
+3. **Click on "Secrets and variables" → "Actions"**
+4. **Click "New repository secret"**
 
-## How to Add Secrets:
+Add these secrets:
 
-1. Go to: https://github.com/Pratikshya-Bhattarai/health_bridge_hospital/settings/secrets/actions
-2. Click "New repository secret"
-3. Enter the name (e.g., `PYTHONANYWHERE_API_TOKEN`)
-4. Enter the value
-5. Click "Add secret"
-6. Repeat for all secrets above
+#### Required Secrets for PythonAnywhere:
 
-## Example Secret Values:
+| Secret Name | Description | How to Get |
+|-------------|-------------|------------|
+| `PYTHONANYWHERE_HOST` | Your PythonAnywhere SSH host | From PythonAnywhere account settings |
+| `PYTHONANYWHERE_USERNAME` | Your PythonAnywhere username | Your PythonAnywhere username |
+| `PYTHONANYWHERE_SSH_KEY` | Your SSH private key | Generate SSH key pair |
 
-- **PYTHONANYWHERE_API_TOKEN**: `abc123def456ghi789` (from PythonAnywhere)
-- **PYTHONANYWHERE_USERNAME**: `bepratikshya` (your PythonAnywhere username)
-- **DB_PASSWORD**: `your_supabase_password` (from Supabase)
-- **DB_HOST**: `db.abcdefghijklmnop.supabase.co` (from Supabase)
-- **SECRET_KEY**: `djangosecretkey2024!@#$%^&*(-_=+)abcdefghijklmnopqrstuvwxyz0123456789`
+### For Vercel Deployment (Frontend)
 
-## After Adding All Secrets:
+Add these secrets for Vercel:
 
-1. Go to the Actions tab in your GitHub repository
-2. You should see the deployment workflow
-3. Click on it to monitor the deployment process
+| Secret Name | Description | How to Get |
+|-------------|-------------|------------|
+| `VERCEL_TOKEN` | Your Vercel API token | From Vercel dashboard → Settings → Tokens |
+| `VERCEL_ORG_ID` | Your Vercel organization ID | From Vercel dashboard → Settings → General |
+| `VERCEL_PROJECT_ID` | Your Vercel project ID | From Vercel project settings |
+
+## 🔧 How to Get PythonAnywhere SSH Access
+
+### Option 1: Free Tier (No SSH)
+- The workflow will skip automatically if no SSH secrets are provided
+- Use manual deployment instead
+
+### Option 2: Paid Tier (With SSH)
+1. **Upgrade to PythonAnywhere paid plan**
+2. **Enable SSH access**
+3. **Generate SSH key pair:**
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+   ```
+4. **Add public key to PythonAnywhere:**
+   - Go to PythonAnywhere → Account → SSH keys
+   - Add your public key
+5. **Add private key to GitHub secrets**
+
+## 🚀 Quick Fix (Skip SSH for Now)
+
+If you don't have SSH access, the workflow will automatically skip the PythonAnywhere deployment step. This is fine for now.
+
+### To disable the workflow temporarily:
+
+1. **Go to your repository**
+2. **Click on "Actions" tab**
+3. **Click on "Deploy Backend to PythonAnywhere"**
+4. **Click on the three dots → "Disable workflow"**
+
+## 📋 Current Status
+
+After setting up the secrets:
+- ✅ PythonAnywhere deployment will work (if you have SSH access)
+- ✅ Vercel deployment will work (if you have Vercel account)
+- ✅ Workflows will only run when secrets are available
+
+## 🎯 Next Steps
+
+1. **Set up the required secrets** (if you have the accounts)
+2. **Or disable the workflows** temporarily
+3. **Use manual deployment** for PythonAnywhere (free tier)
+4. **Test your deployments** once secrets are configured
+
+## 💡 Alternative: Manual Deployment
+
+If you don't want to set up SSH, you can:
+1. **Disable the GitHub workflow**
+2. **Use manual deployment** following the PythonAnywhere setup guide
+3. **Deploy frontend to Vercel** manually or through Vercel dashboard

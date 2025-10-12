@@ -1,8 +1,11 @@
-name: Deploy to PythonAnywhere
+name: Deploy Backend to PythonAnywhere
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deploy.yml'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -30,6 +33,7 @@ jobs:
         
     - name: Deploy to PythonAnywhere
       uses: appleboy/ssh-action@v1.0.3
+      if: ${{ secrets.PYTHONANYWHERE_HOST != '' && secrets.PYTHONANYWHERE_USERNAME != '' && secrets.PYTHONANYWHERE_SSH_KEY != '' }}
       with:
         host: ${{ secrets.PYTHONANYWHERE_HOST }}
         username: ${{ secrets.PYTHONANYWHERE_USERNAME }}
@@ -47,8 +51,8 @@ jobs:
           # Activate virtual environment
           source venv/bin/activate
           
-          # Install/update dependencies
-          pip install --user -r requirements.txt
+          # Install/update dependencies (remove --user flag for virtual environment)
+          pip install -r requirements.txt
           
           # Run database migrations
           python manage.py migrate --settings=healthbridge_backend.settings_production
